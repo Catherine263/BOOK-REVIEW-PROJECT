@@ -1,0 +1,1001 @@
+/* ==================== GOOGLE FONTS ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* ==================== GENERAL ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* ========== COLORS ========== */
+    --main-color: #810800;
+    --second-color: #c6803b;
+    --lightest-color: #fcfcfc;
+    --grey-color: #dedcd7;
+    --border: 0.1rem solid rgba(113, 111, 109, 0.329);
+
+    /* ========== TEXT ========== */
+    --h1-font-size: 5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.8rem;
+    --h4-font-size: 1.2rem;
+    --h5-font-size: 1rem;
+    --p-font-size: 1rem;
+}
+
+*::selection{
+    color: white;
+    background: var(--main-color);
+}
+
+section {
+    padding: 60px 10%;
+}
+
+/* ==================== GENERAL STOP ==================== */
+
+/* ==================== HEADER START ==================== */
+
+header {
+    display: flex;
+    position: fixed;
+    padding: 10px 10%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.2s;
+}
+
+.logo {
+    font-size: var(--h2-font-size);
+    color: black;
+}
+
+/* ========== NAVBAR MENU ========== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    margin-left: 40px;
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0; /* Ubah lebar awal menjadi 0 */
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+    transition: width .5s; /* Gunakan animasi hanya pada lebar */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Ubah lebar saat hover menjadi 100% */
+}
+
+/* ========== ICON & BUTTON ========== */
+
+.btn-signing {
+    width: 100px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    cursor: pointer;
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 20px;
+    transition: .5s;
+    color: black;
+}
+
+.btn-signing:hover {
+    background: black;
+    color: white;
+}
+
+/* ========== BURGER NAVBAR ========== */
+
+#burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: var(--h3-font-size);
+    color: black;
+}
+
+/* ========== STICKY NAVBAR ========== */
+.sticky {
+    background-color: #d3d0b1;
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ==================== HEADER STOP ==================== */
+
+/* ==================== HOME SECTION START ==================== */
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+}
+
+.home img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home-text h1 {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    color: black;
+}
+
+/* ========== SEARCH BOX ========== */
+.search {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px 50px 10px 50px;
+    border: 2px solid black;
+    font-size: var(--p-font-size);
+}
+
+/* Hides the default clear button in the search input */
+.search input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search .bx-search,
+.search .clear-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: black;
+}
+
+.search .bx-search {
+    left: 20px;
+}
+
+.search .clear-icon {
+    right: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+/* ==================== HOME SECTION STOP ==================== */
+
+/* ==================== TRENDING SECTION START ==================== */
+
+/* ========== TRENDING CONTAINER ========== */
+.trending {
+    background: var(--lightest-color);
+    min-height: 100vh;
+}
+
+.trending .heading h2 {
+    color: black;
+    margin-bottom: 2rem;
+    font-size: var(--h2-font-size);
+}
+
+.trending .trending-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+}
+
+/* ========== TRENDING IMAGE ========== */
+.trending .trending-container .box .image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.trending .trending-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+/* ========== TRENDING CONTENT ========== */
+
+.trending .trending-container .box .content {
+    text-align: left;
+    line-height: 1.7rem;
+}
+
+.trending .trending-container .box .content h4 {
+    font-size: var(--h4-font-size);
+    font-weight: 600;
+    color: black;
+}
+
+.trending .trending-container .box .content h5 {
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    color: black;
+}
+
+.trending .trending-container .box .content p {
+    font-size: var(--p-font-size);
+    color: black;
+}
+
+.trending .trending-container .box .content span {
+    color: grey;
+}
+
+.trending .trending-container .box:hover {
+    transform: scale(1.1);
+}
+
+/* ==================== TRENDING SECTION STOP ==================== */
+
+
+/* ==================== DEV TEAM SECTION START ==================== */
+
+/* ========== DEV TEAM CONTAINER ========== */
+.devteam {
+    background: #d3d0b1;
+    min-height: 100vh;
+}
+
+.devteam .heading h2 {
+    color: black;
+    margin-bottom: 2rem;
+    font-size: var(--h2-font-size);
+}
+
+.devteam .devteam-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.devteam .devteam-container .box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--lightest-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== DEV TEAM IMAGE ========== */
+.devteam .devteam-container .box .image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.devteam .devteam-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.devteam .devteam-container .box .image::after {
+    content: '';
+    position: absolute;
+    bottom: -45%; /* Adjust the height of the slant */
+    left: 0;
+    width: 110%;
+    height: 45%; /* Adjust the height of the slant */
+    
+    background: var(--lightest-color);
+    transform: skewY(-15deg);
+    transform-origin: bottom left;
+}
+
+/* ========== DEV TEAM CONTENT ========== */
+.devteam .devteam-container .box .content {
+    padding: 1rem;
+    text-align: center;
+    line-height: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.devteam .devteam-container .box .content h4 {
+    font-size: var(--h4-font-size);
+    font-weight: 600;
+    color: black;
+}
+
+.devteam .devteam-container .box .content p {
+    font-size: var(--p-font-size);
+    color: black;
+}
+
+.devteam .devteam-container .box .content span {
+    font-size: .8rem;
+    color: black;
+}
+
+.devteam .devteam-container .box .content a {
+    font-size: var(--h4-font-size);
+}
+
+.devteam .devteam-container .box .content a .bx {
+    padding: 0.3rem;
+    color: black;
+}
+
+/* ==================== DEV TEAM SECTION STOP ==================== */
+
+/* ==================== CONTACT SECTION START ==================== */
+
+.contact {
+    display: flex;
+    height: auto;
+	padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightest-color);
+}
+
+.contact h5 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--h5-font-size);
+    color: var(--darkest-color);
+}
+
+.contact p {
+    text-align: center;
+    font-size: var(--p-font-size);
+    color: var(--darkest-color);
+}
+
+.social a{
+    font-size: var(--h2-font-size);
+    margin: 1rem;
+}
+
+.social a .bx {
+    padding: 0.5rem;
+    border-radius: 50%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.8rem;
+    color: black;
+    background: var(--grey-color);
+}
+
+.social a .bx:hover {
+    background: var(--main-color);
+}
+
+/* ==================== CONTACT SECTION STOP ==================== */
+
+
+
+/* ====================================================== */
+/* MEDIA QUERIES BREAKPOINTS */
+
+/* ========== GENERAL ========== */
+
+/* LARGE DEVICES */
+@media (max-width: 1000px) {
+    header {
+        padding: 18px 7%;
+    }
+    section {
+        padding: 50px 7%;
+    }
+}
+
+/* MEDIUM DEVICES */
+@media (max-width: 991px) {
+    header {
+        padding: 18px 4%;
+    }
+    section {
+        padding: 50px 4%;
+    }
+}
+
+/* SMALL DEVICES */
+@media (max-width: 768px) {
+    header {
+        padding: 11px 4%;
+        justify-content: space-between; 
+        align-items: center; 
+        background-color: #d3d0b1;
+    }
+    
+    #burger-menu {
+        display: initial;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #d3d0b1;
+        box-shadow: 0 4px 4px rgb(14 55 54 / 14%);
+        border-top: 2px solid black;
+        transition: 0.2s;
+        width: 100%;
+    }
+    
+    .navbar.active {
+        top: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .navbar a {
+        padding: 1rem;
+        display: block;
+        color: black;
+    }
+
+    .navbar a::after {
+        content: none;
+    }
+    
+    .navbar a:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== BROWSE HTML START ==================== */
+
+/* ==================== BROWSING SECTION ==================== */
+.browsing {
+    margin-top: 5%;
+}
+
+.browsing .search {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.browsing .container {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== FILTER CONTAINER ========== */
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-container .filters {
+    background-color: #d3d0b1;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.filters h3 {
+    font-size: var(--h4-font-size);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filters .options {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    font-size: var(--h5-font-size);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filters .options.active {
+    display: grid;
+}
+
+.filters .options li {
+    display: flex;
+    align-items: center;
+}
+
+.filters .options input[type="checkbox"] {
+    margin-right: 10px; /* Jarak antara checkbox dan teks label */
+}
+
+.filters .apply-button {
+    display: none;
+    width: 100px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    cursor: pointer;
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .5s;
+    color: black;
+}
+
+.filters .apply-button.active {
+    display: block;
+}
+
+.filters .apply-button:hover {
+    background: black;
+    color: white;
+}
+
+.filters .show-button {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    color: black;
+    position: absolute;
+    right: 25px;
+    top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--h3-font-size);
+}
+
+.filters .show-button:hover {
+    color: black;
+}
+
+
+/* ========== BOOK CONTAINER========== */
+
+.books-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    width: 100%;
+}
+
+.books-container .books {
+    display: flex;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    width: 100%;
+}
+
+.books-container .books:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.books-container .books .image {
+    width: 15%; /* Lebar gambar */
+    max-height: 200px; /* Tinggi maksimum gambar */
+}
+
+.books-container .books .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.books-container .books .content {
+    padding: 20px;
+    width: 100%;
+    align-content: center;
+}
+
+.books-container .books .content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.books-container .books .content h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.books-container .books .content p {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.books-container .books .content span {
+    color: grey;
+    font-size: 0.9rem;
+}
+
+/* ==================== BROWSE HTML STOP ==================== */
+
+
+/* ==================== SIGN HTML START ==================== */
+
+/* ==================== SIGN SECTION ==================== */
+.signing {
+    background-color: #d3d0b1;
+    min-height: 100vh;
+}
+
+.signing .container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2rem;
+    margin: 5rem auto;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 40px;
+}
+
+.signin-form h2 {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+
+.signin-form .data-input {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.signin-form .data-input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.signin-form .data-input .bx-envelope,
+.signin-form .data-input .bx-lock-alt {
+    position: absolute;
+    right: 5px;
+}
+
+/* ==================== SIGN HTML STOP ==================== */
+
+/* ==================== REVIEW HTML START ==================== */
+
+.review {
+    background-color: #d3d0b1;
+    min-height: 100vh;
+}
+
+.review .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.review .container .image {
+    width: 30%;
+    max-height: 500px;
+}
+
+.review .container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.review .container .content {
+    width: 65%;
+    padding-left: 20px;
+}
+
+.review .container .content h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 0.5rem;
+}
+
+.review .container .content h4 {
+    font-size: var(--h4-font-size);
+    margin-bottom: 0.5rem;
+}
+
+.review .container .content p {
+    font-size: var(--p-font-size);
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+.review .container .content span {
+    color: grey;
+}
+
+.content .column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.content .column .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .column .row h4 {
+    flex: 0 0 25%;
+    margin-bottom: 0;
+}
+
+.content .column .row p {
+    flex: 0 0 75%;
+    text-align: left;
+    margin-top: 0;
+}
+
+/* ==================== REVIEW HTML START ==================== */
+
+.review {
+    background-color: #d3d0b1;
+    min-height: 100vh;
+}
+
+.review .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.review .container .image {
+    width: 30%;
+    max-height: 500px;
+}
+
+.review .container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.review .container .content {
+    width: 65%;
+    padding-left: 20px;
+}
+
+.review .container .content h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 0.5rem;
+}
+
+.review .container .content h4 {
+    font-size: var(--h4-font-size);
+    margin-bottom: 0.5rem;
+}
+
+.review .container .content p {
+    font-size: var(--p-font-size);
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+.review .container .content span {
+    color: grey;
+}
+
+.content .column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.content .column .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .column .row h4 {
+    flex: 0 0 25%;
+    margin-bottom: 0;
+}
+
+.content .column .row p {
+    flex: 0 0 75%;
+    text-align: left;
+    margin-top: 0;
+}
+
+/* ==================== REVIEW HTML START ==================== */
+
+.review {
+    background-color: #d3d0b1;
+    min-height: 100vh;
+}
+
+.review .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.review .container .image {
+    width: 30%;
+    max-height: 500px;
+}
+
+.review .container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.review .container .content {
+    width: 65%;
+    padding-left: 20px;
+}
+
+.review .container .content h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 0.8rem;
+}
+
+.review .container .content h4 {
+    font-size: var(--h4-font-size);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.review .container .content p {
+    font-size: var(--p-font-size);
+    text-align: justify;
+}
+
+.review .container .content span {
+    color: grey;
+}
+
+.content .column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.content .column .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .column .row h4 {
+    flex: 0 0 25%;
+    margin-bottom: 0;
+}
+
+.content .column .row p {
+    flex: 0 0 75%;
+    text-align: left;
+    margin-top: 0;
+}
+
+@media (max-width: 1110px) {
+    .content .column .row h4 {
+        flex: 0 0 30%;
+        margin-bottom: 0;
+    }
+    
+    .content .column .row p {
+        flex: 0 0 70%;
+    }
+}
+
+@media (max-width: 990px) {
+    .content .column .row h4 {
+        flex: 0 0 35%;
+        margin-bottom: 0;
+    }
+    
+    .content .column .row p {
+        flex: 0 0 65%;
+    }
+}
+
+@media (max-width: 768px) {
+    .review .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15%;
+    }
+
+    .review .container .image {
+        width: 50%;
+    }
+
+    .review .container .content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content .column .row {
+        align-items: center ;
+    }
+
+    .content .column .row h4 {
+        flex: 0 0 40%;
+    }
+    
+    .content .column .row p {
+        flex: 0 0 60%;
+        text-align: left;
+    }
+}
+/* ==================== REVIEW HTML STOP ==================== */
+
